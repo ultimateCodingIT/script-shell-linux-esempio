@@ -1,0 +1,82 @@
+esercizio 1.
+
+scrivere uno script di shell che stampa "shell scripting is fun!".
+
+
+
+#!/bin/bash
+
+STRINGA="shell scripting is fun!"
+
+
+echo ${STRINGA}
+
+
+
+
+esercizio 2.
+
+scrivere uno script che memorizza l'output di un comando "hostname" e lo mette in una variabile. visualizzare il messaggio "questo script è in esecuzione su XXXX" dove XXX è l'output del comando hostname.
+
+
+
+#!/bin/bash
+
+HOST_NAME=$(hostname)
+echo "questo script linux è in esecuzione su ${HOST_NAME}"
+
+
+
+esercizio 3.
+
+scrivere uno script che controlla se esiste un file /etc/shadow. Se il file esiste allora visualizza il messaggio "shadow password are enabled" Poi bisogna controllare se è possibile scrivere il file se così "you have permissions to edit /etc/shadow" se non puoi, allora visualizza il messaggio "you do not have permissions to edit /etc/shadow"
+
+
+
+
+#!/bin/bash
+
+PERCORSO="/etc/shadow"
+
+if [ -e $PERCORSO ] then
+
+   echo " ${PERCORSO} shadow password are enabled"
+
+   if [ -w $PERCORSO ] then
+
+	echo "you have permissions to edit ${PERCORSO} "
+
+   else
+	echo "you do NOT have permissions to edit ${PERCORSO} "
+
+   fi
+
+
+fi
+
+
+
+
+
+
+esercizio 4.
+
+scrivere uno script shell, che visualizza "man", "bear", "pig", "dog", "cat" e "sheep" sullo schermo.
+
+
+
+!#/bin/bash
+
+ITEM1=man
+ITEM2=bear
+ITEM3=pig
+ITEM4=dog
+ITEM5=cat
+ITEM6=sheep
+
+for MY_VARIABILE in ITEM1 ITEM2 ITEM3 ITEM4 ITEM5 ITEM6 do
+echo $MY_VARIABILE
+done
+
+
+
